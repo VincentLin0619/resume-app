@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import { Button, Container, FormControl, InputGroup } from "react-bootstrap";
 import IList from "../../interface";
 import ShowList from "./ShowList";
@@ -21,6 +21,15 @@ const TodoList: React.FC = () => {
     setList(list.concat(newList));
     console.table(newList);
   };
+
+  /*=============================keyboardEvent===========================*/
+  const keyHandler = (event: KeyboardEvent) => {
+    if (event.code === "Enter") {
+      btnHandler();
+    }
+  };
+  /*=============================keyboardEvent===========================*/
+
   const deletList = (ListToDelet: string): void => {
     setList(
       list.filter((TodoList) => {
@@ -38,6 +47,7 @@ const TodoList: React.FC = () => {
           value={input}
           onChange={inputHandler}
           placeholder="輸入待辦事項"
+          onKeyDown={keyHandler}
         />
         <Button onClick={btnHandler} variant="primary">
           ADD
