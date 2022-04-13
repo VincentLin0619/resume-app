@@ -1,3 +1,23 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+#section{
+    width: 85%;
+    float: right;
+}
+#nav-m{
+    display: none;
+}
+@media screen and (max-width: 450px) {
+    #section{
+    width: 100%;
+    }
+    #nav-m{
+        display: block;
+    }
+}
+
+nav{
+    width: 15%;
+  
+}
